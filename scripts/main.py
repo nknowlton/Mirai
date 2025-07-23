@@ -17,6 +17,18 @@ import onconet.utils.stats as stats
 import pdb
 import csv
 
+"""Main training and evaluation entry point.
+
+This script sets up datasets, models and transformers using command line
+arguments and then performs training, validation or testing.  It is the main
+interface for experimenting with Mirai models.
+
+Basic usage:
+```
+python scripts/main.py --model_name mirai_full --dataset <dataset> [flags]
+```
+"""
+
 #Constants
 DATE_FORMAT_STR = "%Y-%m-%d:%H-%M-%S"
 
