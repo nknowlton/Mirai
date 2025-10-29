@@ -14,6 +14,21 @@ sys.path.append(dirname(dirname(realpath(__file__))))
 from onconet.utils import parsing
 from onconet.utils.generic import md5
 
+"""Grid search dispatcher for Mirai experiments.
+
+This utility reads a JSON configuration describing multiple experiments,
+launches each job on the available GPUs and aggregates their results into a
+single CSV file. It calls ``scripts/main.py`` for the actual training or
+evaluation runs.
+
+Example
+-------
+```bash
+python scripts/dispatcher.py --experiment_config_path configs/finetune_mirai.json \
+    --result_path finetune_results.csv
+```
+"""
+
 EXPERIMENT_CRASH_MSG = "ALERT! job:[{}] has crashed! Check logfile at:[{}]"
 CONFIG_NOT_FOUND_MSG = "ALERT! {} config {} file does not exist!"
 RESULTS_PATH_APPEAR_ERR = 'results_path should not appear in config. It will be determined automatically per job'

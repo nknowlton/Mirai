@@ -4,6 +4,18 @@ sys.path.append(dirname(dirname(realpath(__file__))))
 from onconet.utils.parsing import parse_args
 from onconet.utils.get_dataset_stats import get_dataset_stats
 
+"""Compute dataset channel statistics.
+
+Parses dataset arguments and prints the mean and standard deviation of the
+images in the dataset. This is a thin wrapper around ``onconet.utils.get_dataset_stats``.
+
+Usage
+-----
+```bash
+python scripts/get_dataset_stats.py --dataset <name> --img_dir <dir> --metadata_dir <dir>
+```
+"""
+
 
 if __name__ == "__main__":
     # REQUIRED ARGS:
